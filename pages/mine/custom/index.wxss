@@ -1,0 +1,38 @@
+page{
+  height: 100%;
+  background: #f4f4f4;
+}
+.add-custom .add-form{
+  background: #fff;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.add-custom .form-item{
+  height: 80rpx;
+  padding-left: 20rpx;
+  border-bottom: 1px solid #d9d9d9;
+  display: flex;
+  align-items: center;
+  padding-right: 31.25rpx;
+}
+
+.add-custom .label{
+  width: 180rpx;
+  font-size:small;
+  display: flex;
+  align-items: center;
+}
+
+.add-custom .content{
+  height: 80rpx;
+  font-size:small;
+  padding-left: 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+.add-custom .save{
+  background: #b4282d;
+}

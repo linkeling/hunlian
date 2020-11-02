@@ -1,0 +1,96 @@
+<view class="add-custom">
+  <view class="form-item">
+     <view class="label">姓名:</view>
+     <view class="content"><input class="input" placeholder="请输入姓名" value="{{customInfo.name}}"/></view>
+  </view>
+  <view class="form-item">
+     <view class="label">性別:</view>
+     <view class="content">
+       <label><radio value="1">男</radio></label>
+       <label><radio value="2">女</radio></label>
+     </view>
+  </view>
+  <view class="form-item">
+     <view class="label">出生日期:</view>
+     <view class="content"><input class="input" placeholder="请输入" value="{{customInfo.name}}"/></view>
+  </view>
+  <view class="form-item">
+     <view class="label">现居地:</view>
+     <view class="content"><input class="input" placeholder="请输入" value="{{customInfo.name}}"/></view>
+  </view>
+  <view class="form-item">
+     <view class="label">家乡:</view>
+     <view class="content"><input class="input" placeholder="请输入" value="{{customInfo.name}}"/></view>
+  </view>
+  <view class="form-item">
+     <view class="label">身高:</view>
+     <view class="content"><input class="input" placeholder="请输入" value="{{customInfo.name}}"/></view>
+  </view>
+  <view class="form-item">
+     <view class="label">体重:</view>
+     <view class="content"><input class="input" placeholder="请输入" value="{{customInfo.name}}"/></view>
+  </view>
+  <view class="form-item">
+     <view class="label">学历:</view>
+     <view class="content"><input class="input" placeholder="请输入" value="{{customInfo.name}}"/></view>
+  </view>
+  <view class="form-item">
+     <view class="label">职业:</view>
+     <view class="content"><input class="input" placeholder="请输入" value="{{customInfo.name}}"/></view>
+  </view>
+  <view class="form-item">
+     <view class="label">月收入:</view>
+     <view class="content"><input class="input" placeholder="请输入" value="{{customInfo.name}}"/></view>
+  </view>
+  <view class="form-item">
+     <view class="label">房产情况:</view>
+     <view class="content"><input class="input" placeholder="请输入" value="{{customInfo.name}}"/></view>
+  </view>
+  <view class="form-item">
+     <view class="label">车辆情况:</view>
+     <view class="content"><input class="input" placeholder="请输入" value="{{customInfo.name}}"/></view>
+  </view>
+  <view class="form-item">
+     <view class="label">有无婚史:</view>
+     <view class="content"><input class="input" placeholder="请输入" value="{{customInfo.name}}"/></view>
+  </view>
+  <view class="form-item">
+     <view class="label">有无小孩:</view>
+     <view class="content"><input class="input" placeholder="请输入" value="{{customInfo.name}}"/></view>
+  </view>
+  <view class="form-item">
+     <view class="label">是否接受离异:</view>
+     <view class="content"><input class="input" placeholder="请输入" value="{{customInfo.name}}"/></view>
+  </view>
+  <view class="form-item">
+     <view class="label">个人介绍:</view>
+     <view class="content"><input class="input" placeholder="请输入" value="{{customInfo.name}}"/></view>
+  </view>
+  <view class="form-item">
+     <view class="label">家庭介绍:</view>
+     <view class="content"><input class="input" placeholder="请输入" value="{{customInfo.name}}"/></view>
+  </view>
+  <view class="form-item">
+     <view class="label">择偶标准:</view>
+     <view class="content"><input class="input" placeholder="请输入" value="{{customInfo.name}}"/></view>
+  </view>
+  <view class="form-item">
+     <view class="label">不接受情况:</view>
+     <view class="content"><input class="input" placeholder="请输入" value="{{customInfo.name}}"/></view>
+  </view>
+  <view class="form-item">
+     <view class="label">联系电话:</view>
+     <view class="content"><input class="input" placeholder="请输入" value="{{customInfo.name}}"/></view>
+  </view>
+  <view class="form-item">
+     <view class="label">微信号:</view>
+     <view class="content"><input class="input" placeholder="请输入" value="{{customInfo.name}}"/></view>
+  </view>
+  <view class="form-item">
+     <view class="label">照片:</view>
+     <view class="content"><input class="input" placeholder="请输入" value="{{customInfo.name}}"/></view>
+  </view>
+  <view class="btns">
+    <button class="save" bindtap="savecustomInfo">保存</button>
+  </view>
+</view>
