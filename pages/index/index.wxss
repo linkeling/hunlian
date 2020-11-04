@@ -1,8 +1,19 @@
-.listCell{
-    border-bottom: 10rpx solid #eccfcf;
-}
 .listView {
+  border-bottom: 20rpx;
   display: flex;
   flex-direction: column;
-  background-color: white;
+}
+
+.listCell{
+  background-color: #fae1e1;
+  margin-top: 10rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+
+.image{
+   width: 98%;
+}
+.text-content{
+  font-size:small;
 }

@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/activity/index",
     "pages/mine/index/index",
     "pages/mine/custom/index"
   ],
@@ -13,7 +14,7 @@
 
   "tabBar": {
     "backgroundColor": "#fff",
-    "color": "#333",
+    "color": "#DB7093",
     "selectedColor": "#ff5f19",
     "list": [
       {
@@ -25,7 +26,7 @@
       {
         "selectedIconPath": "images/huodong_n.png",
         "iconPath": "images/huodong_y.png",
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/activity/index",
         "text": "活动"
       },
       {

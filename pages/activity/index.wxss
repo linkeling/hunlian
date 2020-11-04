@@ -1,0 +1,8 @@
+.listCell{
+    border-bottom: 10rpx solid #eccfcf;
+}
+.listView {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}

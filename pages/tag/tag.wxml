@@ -1,0 +1,25 @@
+
+<cu-custom bgColor="bg-gradual-write" isBack="{{true}}">
+    <view slot="content" class="text-black">标签</view>
+</cu-custom>
+<view class="cu-bar bg-white margin-top  solid-bottom">
+  <view class="action">
+    <text class="cuIcon-title text-blue"></text>标签
+  </view>
+</view>
+
+<view class="padding-sm flex flex-wrap">
+  <view class="padding-xs" wx:for="{{userTags}}" wx:key>
+    <view bindtap='deleteItem' class="cu-tag" data-value="{{item}}">{{item}}<text class="cuIcon-close lg text-red"></text></view>
+  </view>
+</view>
+
+<view class="padding-sm flex flex-wrap">
+  <view class="padding-xs" wx:for="{{tagList}}" wx:key>
+    <view class="cu-tag" data-value="{{item}}" bindtap='selectItem'>{{item}}</view>
+  </view>
+</view>
+
+<view class="padding-xl bg-white">
+  <button bindtap='confirm' class="cu-btn block bg-blue margin-tb-sm lg">完成</button>
+</view>

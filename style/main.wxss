@@ -1,0 +1,178 @@
+page {
+	--red: #e54d42;
+	--orange: #f37b1d;
+	--yellow: #fbbd08;
+	--olive: #8dc63f;
+	--green: #39b54a;
+	--cyan: #1cbbb4;
+	--blue: #0081ff;
+	--purple: #6739b6;
+	--mauve: #9c26b0;
+	--pink: #e03997;
+	--brown: #a5673f;
+	--grey: #8799a3;
+	--black: #333333;
+	--darkGray: #666666;
+	--gray: #aaaaaa;
+	--ghostWhite: #f1f1f1;
+	--white: #ffffff;
+	/* 浅色 */
+	--redLight: #fadbd9;
+	--orangeLight: #fde6d2;
+	--yellowLight: #fef2ce;
+	--oliveLight: #e8f4d9;
+	--greenLight: #d7f0db;
+	--cyanLight: #d2f1f0;
+	--blueLight: #cce6ff;
+	--purpleLight: #e1d7f0;
+	--mauveLight: #ebd4ef;
+	--pinkLight: #f9d7ea;
+	--brownLight: #ede1d9;
+	--greyLight: #e7ebed;
+	/* 渐变色 */
+	--gradualWrite: linear-gradient(45deg, #ffffff, #ffffff);
+	--gradualRed: linear-gradient(45deg, #f43f3b, #ec008c);
+	--gradualOrange: linear-gradient(45deg, #ff9700, #ed1c24);
+	--gradualGreen: linear-gradient(45deg, #39b54a, #8dc63f);
+	--gradualPurple: linear-gradient(45deg, #9000ff, #5e00ff);
+	--gradualPink: linear-gradient(45deg, #ec008c, #6739b6);
+	--gradualBlue: linear-gradient(45deg, #0081ff, #1cbbb4);
+	/* 阴影透明色 */
+	--ShadowSize: 6rpx 6rpx 8rpx;
+	--redShadow: rgba(204, 69, 59, 0.2);
+	--orangeShadow: rgba(217, 109, 26, 0.2);
+	--yellowShadow: rgba(224, 170, 7, 0.2);
+	--oliveShadow: rgba(124, 173, 55, 0.2);
+	--greenShadow: rgba(48, 156, 63, 0.2);
+	--cyanShadow: rgba(28, 187, 180, 0.2);
+	--blueShadow: rgba(0, 102, 204, 0.2);
+	--purpleShadow: rgba(88, 48, 156, 0.2);
+	--mauveShadow: rgba(133, 33, 150, 0.2);
+	--pinkShadow: rgba(199, 50, 134, 0.2);
+	--brownShadow: rgba(140, 88, 53, 0.2);
+	--greyShadow: rgba(114, 130, 138, 0.2);
+	--grayShadow: rgba(114, 130, 138, 0.2);
+	--blackShadow: rgba(26, 26, 26, 0.2);
+
+	background-color: var(--ghostWhite);
+	font-size: 28rpx;
+	color: var(--black);
+	font-family: Helvetica Neue, Helvetica, sans-serif;
+}
+
+/* ==================
+         表单
+ ==================== */
+
+.cu-form-group {
+	min-height: 80rpx;
+  padding-left: 20rpx;
+  border-bottom: 1px solid #d9d9d9;
+	display: flex;
+  align-items: center;
+  padding-right: 31.25rpx;
+}
+
+.cu-form-group+.cu-form-group {
+	border-top: 1rpx solid #eee;
+}
+
+.cu-form-group .title {
+	width: 180rpx;
+  font-size:small;
+  display: flex;
+  align-items: center;
+}
+
+.cu-form-group input {
+	flex: 1;
+	font-size: 25rpx;
+	color: #555;
+	padding-left: 15rpx;
+}
+
+.cu-form-group radio{
+	font-size: 25rpx;
+	padding-left: 10px;
+	transform:scale(0.7);
+}
+
+.cu-form-group>text[class*="cuIcon-"] {
+	font-size: 25rpx;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.cu-form-group textarea {
+	margin: 32rpx 0 30rpx;
+	height: 4.6em;
+	width: 100%;
+	line-height: 1.2em;
+	flex: 1;
+	font-size: 28rpx;
+	padding: 0;
+}
+
+.cu-form-group.align-start .title {
+	height: 1em;
+	margin-top: 32rpx;
+	line-height: 1em;
+}
+
+.cu-form-group picker {
+	flex: 1;
+	padding-left: 15rpx;
+	overflow: hidden;
+	position: relative;
+}
+
+.cu-form-group picker .picker {
+	line-height: 100rpx;
+	font-size: 25rpx;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	width: 100%;
+	text-align: right;
+}
+
+.cu-form-group picker::after {
+	font-family: "cuIcon";
+	display: block;
+	content: "\e6a3";
+	position: absolute;
+	font-size: 34rpx;
+	color: var(--grey);
+	line-height: 100rpx;
+	width: 60rpx;
+	text-align: center;
+	top: 0;
+	bottom: 0;
+	right: -20rpx;
+	margin: auto;
+}
+
+.text-red,
+.line-red,
+.lines-red {
+	color: var(--red);
+}
+
+.cu-form-group textarea[disabled],
+.cu-form-group textarea[disabled] .placeholder {
+	color: transparent;
+}
+
+.padding-xl {
+	padding: 50rpx;
+}
+
+.bg-white {
+	background-color: var(--white);
+	color: var(--darkGray);
+}
+
+.bg-blue {
+	background-color: var(--blue);
+	color: var(--white);
+}

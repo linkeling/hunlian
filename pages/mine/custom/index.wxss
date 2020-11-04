@@ -1,6 +1,6 @@
 page{
   height: 100%;
-  background: #f4f4f4;
+  background: #f5f4f4;
 }
 .add-custom .add-form{
   background: #fff;
@@ -35,4 +35,15 @@ page{
 
 .add-custom .save{
   background: #b4282d;
+}
+
+.add-custom .input{
+  flex: 1;
+  height: 44rpx;
+  line-height: 44rpx;
+  overflow: hidden;
+}
+.add-custom .radio {
+    margin-right: 15px;
+    transform:scale(0.7);
 }
