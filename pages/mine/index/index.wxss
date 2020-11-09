@@ -9,6 +9,7 @@
   width: 100%;
   background:rebeccapurple;
 }
+
 .listItem{
   display: flex;
   flex-direction: column;
@@ -17,6 +18,7 @@
   padding-left: 30rpx;
   line-height: 100rpx;
 }
+
 .listItem .cell{
   height: 100rpx;
   border-bottom: 1rpx solid #efefef;

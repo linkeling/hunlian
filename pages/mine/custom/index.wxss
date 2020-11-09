@@ -1,49 +1,35 @@
-page{
+.user-edit-box{
+  background: #f0f0f0;
+}
+.user-edit-fontsize{
+  font-size: 24rpx;
+}
+.user-icon-fontsize{
+  font-size: 48rpx;
+}
+.flex-width-65{
+  width: 65%;
+}
+.flex-height-100{
+  height: 344rpx;
+}
+.flex-width-35{
+  width: 35%;
+  margin-left: 20rpx;
+}
+.user-avator-url{
   height: 100%;
-  background: #f5f4f4;
-}
-.add-custom .add-form{
-  background: #fff;
   width: 100%;
-  height: auto;
-  overflow: hidden;
 }
-
-.add-custom .form-item{
-  height: 80rpx;
-  padding-left: 20rpx;
-  border-bottom: 1px solid #d9d9d9;
-  display: flex;
-  align-items: center;
-  padding-right: 31.25rpx;
+.flex-height-item{
+  height: 162rpx;
 }
-
-.add-custom .label{
-  width: 180rpx;
-  font-size:small;
-  display: flex;
-  align-items: center;
+.flex-width-33{
+  width: 33%;
 }
-
-.add-custom .content{
-  height: 80rpx;
-  font-size:small;
-  padding-left: 20rpx;
-  display: flex;
-  align-items: center;
+.margin-left-right {
+  margin: 0 20rpx;
 }
-
-.add-custom .save{
-  background: #b4282d;
-}
-
-.add-custom .input{
-  flex: 1;
-  height: 44rpx;
-  line-height: 44rpx;
-  overflow: hidden;
-}
-.add-custom .radio {
-    margin-right: 15px;
-    transform:scale(0.7);
+.user-edit-box .title{
+  font-size: 28rpx;
 }

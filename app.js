@@ -1,5 +1,17 @@
 //app.js
 App({
+  //全局变量
+  globalData: {
+    apiUrl: "http://47.108.64.112:8083", 
+    wxappId: "wxdf8ac6f53cd51e7d",                //小程序id
+    userInfo: {
+      sex:''
+    },                                     //用户信息
+    isServer:0,                                   //服务是否正常 0正常 1服务异常 2UAA异常
+    session: null,                                //鉴权域key(一次获取，减少解密请求)
+    imgCropperSrc:'',                              //头像裁剪
+  },
+
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
@@ -33,7 +45,4 @@ App({
       }
     })
   },
-  globalData: {
-    userInfo: null
-  }
 })

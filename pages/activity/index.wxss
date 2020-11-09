@@ -1,8 +1,4 @@
-.listCell{
-    border-bottom: 10rpx solid #eccfcf;
-}
-.listView {
-  display: flex;
-  flex-direction: column;
-  background-color: white;
+button[disabled]:not([type]){
+    background: rgb(101,179,255);
+    color: #fff;
 }

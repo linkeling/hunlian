@@ -1,11 +1,34 @@
 <form catchsubmit="submitInfo" catchreset="formReset">
     <view class="cu-form-group">
+      <view class="title">
+        我的照片（请至少上传一张真人高质量照片哦）
+      </view>
+    </view>
+    <view class="cu-form-group">  
+      <view bindtap='bindChooiceProduct' data-type="mainImage" data-id="pictureUrl" data-name="picture" class="flex-width-65 flex-height-100 flex-column-center bg-gray radius flex-row-center-center">
+        <text wx:if="{{!pictureUrl}}" class="cuIcon-add lg text-gray user-icon-fontsize"></text>
+        <text wx:if="{{!pictureUrl}}" class="text-gray user-edit-fontsize">（封面大图照片）</text>
+        <image wx:if="{{pictureUrl}}"  class="user-avator-url" src="{{pictureUrl}}"></image>
+      </view>
+      <view class="flex-width-33 flex-column-end">
+        <view bindtap='bindChooiceProduct' data-type="otherImage" data-id="picture1Url" data-name="picture1" class="flex-row-center-center margin-bottom-sm flex-height-item bg-gray radius">
+          <text wx:if="{{!picture1Url}}" class="cuIcon-add lg text-gray user-icon-fontsize"></text>
+          <image wx:if="{{picture1Url}}" class="user-avator-url" src="{{picture1Url}}"></image>
+        </view>
+
+        <view bindtap='bindChooiceProduct' data-type="otherImage" data-id="picture2Url" data-name="picture2" class="flex-row-center-center flex-height-item bg-gray radius">
+          <text wx:if="{{!picture2Url}}" class="cuIcon-add lg text-gray user-icon-fontsize"></text>
+          <image wx:if="{{picture2Url}}" class="user-avator-url" src="{{picture2Url}}"></image>
+        </view>
+      </view>
+    </view>
+    <view class="cu-form-group">
       <view class="title">我的昵称<text class="text-red">*</text></view>
-      <input data-name="nickName" value="{{nickName}}" maxlength='11' bindinput="getValue"/>
+      <input data-name="residentName" value="{{residentName}}" maxlength='11' bindinput="getValue"/>
     </view>
     <view class="cu-form-group">
       <view class="title">性別<text class="text-red">*</text></view>
-      <radio-group class="radio-group" bindchange="radioChange">
+      <radio-group class="radio-group" data-name="gender" bindchange="radioChange">
          <label wx:for-items="{{genderList}}">
            <radio value="{{item.id}}" checked="{{item.checked}}"/>{{item.name}}
          </label>
@@ -14,57 +37,57 @@
     
     <view class="cu-form-group">
       <view class="title">出生日期<text class="text-red">*</text></view>
-      <picker mode="date" value="{{date}}" start="1950-01-01" end="2002-09-01" bindchange="bindDateChange">
-         <view class="content">{{date}}</view>
+      <picker data-name="dateBirth" mode="date" value="{{dateBirth}}" start="1960-01-01" end="2002-09-01" bindchange="bindDateChange">
+         <view class="picker">{{dateBirth}}</view>
       </picker>
     </view>
     <view class="cu-form-group">
       <view class="title">现居地<text class="text-red">*</text></view>
-      <picker mode="region" bindchange="adrssChange" name="addrss" value="{{addrssCh}}">
-        <view class="content">
-            {{addrssCh}}
+      <picker mode="region" bindchange="livingChange" data-name="livingPlaceName" value="{{livingPlaceName}}">
+        <view class="picker">
+            {{livingPlaceName}}
         </view>
     </picker>
     </view>
     <view class="cu-form-group">
       <view class="title">家乡<text class="text-red">*</text></view>
-      <picker mode="region" bindchange="adrssChange" name="addrss" value="{{addrssCh}}">
-        <view class="content">
-            {{addrssCh}}
+      <picker mode="region" bindchange="nativePlaceChange" data-name="addrss" value="{{nativePlaceName}}">
+        <view class="picker">
+            {{nativePlaceName}}
         </view>
     </picker>
     </view>
     <view class="cu-form-group">
       <view class="title">身高(cm)<text class="text-red">*</text></view>
-      <input type="number" data-name="" value="{{}}" maxlength='11' bindinput="getValue" />
+      <input type="number" data-name="height" value="{{height}}" maxlength='11' bindinput="getValue" />
     </view>
     <view class="cu-form-group">
       <view class="title">体重(kg)<text class="text-red">*</text></view>
-      <input type="number" data-name="" value="{{}}" maxlength='11' bindinput="getValue" />
+      <input type="number" data-name="weight" value="{{weight}}" maxlength='11' bindinput="getValue" />
     </view>
     <view class="cu-form-group">
       <view class="title">学历<text class="text-red">*</text></view>
-      <picker bindchange="bindPickerChange" value="{{educationIndex}}" range="{{educationList}}">
-         <view class="content">
-            {{educationList[educationIndex]}}
-         </view>
+      <picker bindchange="educationChange" value="{{educationIndex}}" range="{{educationList}}" range-key="{{'name'}}">
+        <view class="picker">
+          {{educationList[educationIndex].name}}
+        </view>
       </picker>
     </view>
     <view class="cu-form-group">
       <view class="title">职业<text class="text-red">*</text></view>
-      <picker bindchange="bindPickerChange" value="{{educationIndex}}" range="{{professionList}}">
-         <view class="content">
-            {{professionList[educationIndex]}}
-         </view>
+      <picker bindchange="professionChange" value="{{professionIndex}}" range="{{professionList}}" range-key="{{'name'}}">
+        <view class="picker">
+          {{professionList[professionIndex].name}}
+        </view>
       </picker>
     </view>
     <view class="cu-form-group">
       <view class="title">月收入(k)<text class="text-red">*</text></view>
-      <input type="number" data-name="" value="{{}}" maxlength='11' bindinput="getValue" />
+      <input type="number" data-name="monthIncome" value="{{monthIncome}}" bindinput="getValue" />
     </view>
     <view class="cu-form-group">
       <view class="title">房产情况<text class="text-red">*</text></view>
-      <radio-group class="radio-group" bindchange="radioChange">
+      <radio-group class="radio-group" data-name="house" bindchange="radioChange">
             <label wx:for-items="{{hasAndNoList}}">
                <radio value="{{item.id}}" checked="{{item.checked}}"/>{{item.name}}
             </label>
@@ -72,7 +95,7 @@
     </view>
     <view class="cu-form-group">
       <view class="title">车辆情况<text class="text-red">*</text></view>
-      <radio-group class="radio-group" bindchange="radioChange">
+      <radio-group class="radio-group" data-name="isCar" bindchange="radioChange">
          <label wx:for-items="{{hasAndNoList}}">
          <radio value="{{item.id}}" checked="{{item.checked}}"/>{{item.name}}
          </label>
@@ -80,7 +103,7 @@
     </view>
     <view class="cu-form-group">
       <view class="title">有无婚史<text class="text-red">*</text></view>
-      <radio-group class="radio-group" bindchange="radioChange">
+      <radio-group class="radio-group" data-name="marriage" bindchange="radioChange">
             <label wx:for-items="{{hasAndNoList}}">
                <radio value="{{item.id}}" checked="{{item.checked}}"/>{{item.name}}
             </label>
@@ -88,7 +111,7 @@
     </view>
     <view class="cu-form-group">
       <view class="title">有无小孩<text class="text-red">*</text></view>
-      <radio-group class="radio-group" bindchange="radioChange">
+      <radio-group class="radio-group" data-name="children" bindchange="radioChange">
             <label wx:for-items="{{hasAndNoList}}">
                <radio value="{{item.id}}" checked="{{item.checked}}"/>{{item.name}}
             </label>
@@ -96,7 +119,7 @@
     </view>
     <view class="cu-form-group">
       <view class="title">是否接受离异<text class="text-red">*</text></view>
-      <radio-group class="radio-group" bindchange="radioChange">
+      <radio-group class="radio-group" data-name="divorce" bindchange="radioChange">
          <label wx:for-items="{{yesAndNoList}}">
             <radio value="{{item.id}}" checked="{{item.checked}}"/>{{item.name}}
          </label>
@@ -113,27 +136,34 @@
     </view> -->
 
     <view class="cu-form-group align-start">
+      <view class="title">个人介绍：</view>
+    </view>
+    <view class="cu-form-group bg-gray align-start">
+      <textarea data-name="personal" value="{{personal}}" bindinput="getValue" placeholder="(告诉TA你的个人情况，也许TA会对你 感兴趣哦～）"></textarea>
+   </view>
+
+    <view class="cu-form-group align-start">
       <view class="title">家庭介绍：</view>
     </view>
     <view class="cu-form-group bg-gray align-start">
-      <textarea data-name="wish" value="{{wish}}" bindinput="getValue" placeholder="(告诉TA你期待的生活状态是什么，你有什么小心愿，也许TA会帮你 实现哦～）"></textarea>
+      <textarea data-name="family" value="{{family}}" bindinput="getValue" placeholder="(告诉TA你的家庭情况，对你进行充分了解～）"></textarea>
    </view>
 
    <view class="cu-form-group align-start">
       <view class="title">择偶标准：</view>
     </view>
     <view class="cu-form-group bg-gray align-start">
-      <textarea data-name="wish" value="{{wish}}" bindinput="getValue" placeholder="(告诉TA你期待的生活状态是什么，你有什么小心愿，也许TA会帮你 实现哦～）"></textarea>
+      <textarea data-name="standard" value="{{standard}}" bindinput="getValue" placeholder="(告诉TA你的择偶标准，也许缘分就在 人海中哦～）"></textarea>
    </view>
 
    <view class="cu-form-group align-start">
       <view class="title">不接受情况</view>
     </view>
     <view class="cu-form-group bg-gray align-start">
-      <textarea data-name="wish" value="{{wish}}" bindinput="getValue" placeholder="(告诉TA你期待的生活状态是什么，你有什么小心愿，也许TA会帮你 实现哦～）"></textarea>
-   </view>
+      <textarea data-name="reject" value="{{reject}}" bindinput="getValue" placeholder="(告诉TA你不接受的习惯，避免采坑哦～）"></textarea>
+    </view>
 
-   <view class="padding-xl bg-white">
+    <view class="padding-xl bg-white">
       <button formType="submit" class="cu-btn block bg-blue margin-tb-sm lg">提交</button>
     </view>
 </form>

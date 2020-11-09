@@ -5,15 +5,33 @@
 }
 
 .listCell{
-  background-color: #fae1e1;
-  margin-top: 10rpx;
+  background-color: #e9e0e0;
+  margin-top: 30rpx;
   margin-left: 20rpx;
   margin-right: 20rpx;
+  height: 700rpx;
+}
+
+.base-info{
+   margin-left: 20rpx;
+   font-style: inherit;
+}
+
+.resident-standard{
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  font-family:  KaiTi;
+}
+
+.resident-info{
+  font-family:  KaiTi;
+  margin-top: 10rpx;
+  color:var(--gray);
 }
 
 .image{
-   width: 98%;
+   width: 100%;
 }
 .text-content{
-  font-size:small;
+  font-size:30rpx;
 }

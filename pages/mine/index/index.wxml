@@ -1,6 +1,9 @@
 <view class='head'>
   <image lazy-load="" mode="aspectFill" src="../../../images/mine_bg.png"></image>
 </view>
-<view class="listItem">
+<view class="cu-form-group">
   <navigator url="../custom/index">我的资料</navigator> 
+</view>
+<view class="cu-form-group">
+  <navigator url="../about/index">红娘信息</navigator> 
 </view>

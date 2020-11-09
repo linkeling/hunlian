@@ -1,7 +1,3 @@
-<view class="listView"  style="margin-top:{{systemInfoObj.statusBarHeight+44}}px">
-  <view wx:for="{{tabData}}"  class="listCell">
-    <view class='text-content'>{{item.name}}</view>
-    <view class='text-content'>{{item.telephone}}</view>
-    <view class='text-content'>{{item.message}}</view>
-  </view>
+<view>
+    	<button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="cu-btn block bg-blue margin-tb-sm lg">微信登陆</button>
 </view>

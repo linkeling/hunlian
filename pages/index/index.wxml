@@ -1,7 +1,16 @@
-<view>
+<scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:100%;" 
+           class="list" bindscrolltolower="onPullDownRefresh" bindscrolltoupper="onReachBottom">
   <view wx:for="{{tableList}}"  class="listCell">
-    <view><image class="image" src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg"></image></view>
-    <view class='text-content'>{{item.residentName}}</view>
-    <view class='text-content'>{{item.age}}|{{item.genderName}}|{{item.professionName}}</view>
+    <view><image class="image" bindtap="customInfo" data-item="{{item}}" src="{{item.pictureUrl}}"></image></view>
+    <view class="base-info">
+      <view class='resident-name'>{{item.residentName}}</view>
+      <view class='resident-info'>
+        <text decode="{{true}}">{{item.age}}岁&ensp;{{item.height}}kg&ensp;{{item.height}}cm&ensp;{{item.professionName}}</text>
+      </view>
+      <view class='resident-standard'>
+        <text>{{item.standard}}</text>
+      </view>
+    </view>
   </view>
-</view>
+  </scroll-view>
+

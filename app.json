@@ -3,25 +3,25 @@
     "pages/index/index",
     "pages/activity/index",
     "pages/mine/index/index",
-    "pages/mine/custom/index"
+    "pages/mine/custom/index",
+    "pages/customInfo/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh": true
   },
 
   "tabBar": {
-    "backgroundColor": "#fff",
-    "color": "#DB7093",
-    "selectedColor": "#ff5f19",
+    "selectedColor": "#d81e06",
     "list": [
       {
-        "selectedIconPath": "images/home_page_n.png",
-        "iconPath": "images/home_page_y.png",
+        "selectedIconPath": "images/home-act.png",
+        "iconPath": "images/home.png",
         "pagePath": "pages/index/index",
-        "text": "推荐"
+        "text": "首页"
       },
       {
         "selectedIconPath": "images/huodong_n.png",
@@ -30,13 +30,12 @@
         "text": "活动"
       },
       {
-        "selectedIconPath": "images/my_n.png",
-        "iconPath": "images/my_y.png",
+        "selectedIconPath": "images/wode-act.png",
+        "iconPath": "images/wode.png",
         "pagePath": "pages/mine/index/index",
         "text": "我的"
       }
     ]
   },
-  "style": "v2",
   "sitemapLocation": "sitemap.json"
 }
