@@ -1,5 +1,6 @@
 var app = getApp();
 var rts = require("../../../utils/rts.js");
+import WxValidate from "../../../utils/WxValidate";
 
 Page({
   data: {
@@ -16,6 +17,8 @@ Page({
      profession:'',
      hasAndNoList: [{id: 1, name: '有'}, {id: 2, name: '无'}],
      yesAndNoList: [{id: 1, name: '是'}, {id: 2, name: '否'}],
+     childInfoList: [{id: 1, name: '没有'}, {id: 2, name: '有，我们住一起'},{id:3,name:'有，偶尔住一起'},{id:3,name:'有，不在身边'}],
+     childInfoIndex:0,
      dateBirth:"2000-01-01",
      hobbyTags:[],
      hobbys:[],  // 页面显示标签
@@ -54,6 +57,23 @@ Page({
       nativePlace: e.detail.code[2],
     })
   },
+
+  
+  childInfoChange:function(e) {
+    var that = this;
+    var children = ''
+    for (let i = 0; i < that.data.childInfoList.length; i++) {
+      if(i === Number(e.detail.value)){
+        children = that.data.childInfoList[i].id;
+        this.setData({
+          childInfoIndex: e.detail.value,
+          children:children,
+        })
+        return;
+      }
+    }
+  },
+
 
   educationChange(e) {
     var that = this;
@@ -150,7 +170,7 @@ Page({
   },
 
   onLoad: function () {
-    
+    this.initValidate();
   },
   onReady: function () {
 
@@ -174,12 +194,41 @@ Page({
     // 页面关闭
   },
 
+  initValidate() {
+    let rules = {
+      residentName: {
+        required: true,
+        maxlength: 10
+      }
+    }
+
+    let message = {
+      residentName: {
+        required: '请输入姓名',
+        maxlength: '名字不能超过10个字'
+      },
+    }
+    //实例化当前的验证规则和提示消息
+    this.WxValidate = new WxValidate(rules, message);
+  },
+
    // 提交个人信息
    submitInfo: function (e) {
-      var that = this;
-      console.log(that.data);
-      rts.rtPostAll(app.globalData.apiUrl+"/v1/match-admin/custom-base-info", that.data, function (res) {
-        console.log(res)
-      })
+    var that = this;
+    if (!this.WxValidate.checkForm(that.data)) {
+      //表单元素验证不通过，此处给出相应提示
+        let error = this.WxValidate.errorList[0];
+        console.log(error);
+        switch (error.param) {
+            case "residentName":
+              //TODO
+              break;
+          }
+      }
+      // return false;
+      // console.log(that.data);
+      // rts.rtPostAll(app.globalData.apiUrl+"/v1/match-admin/custom-base-info", that.data, function (res) {
+      //   console.log(res)
+      // })
   },
 })

@@ -109,14 +109,7 @@
             </label>
       </radio-group>
     </view>
-    <view class="cu-form-group">
-      <view class="title">有无小孩<text class="text-red">*</text></view>
-      <radio-group class="radio-group" data-name="children" bindchange="radioChange">
-            <label wx:for-items="{{hasAndNoList}}">
-               <radio value="{{item.id}}" checked="{{item.checked}}"/>{{item.name}}
-            </label>
-      </radio-group>
-    </view>
+
     <view class="cu-form-group">
       <view class="title">是否接受离异<text class="text-red">*</text></view>
       <radio-group class="radio-group" data-name="divorce" bindchange="radioChange">
@@ -124,6 +117,15 @@
             <radio value="{{item.id}}" checked="{{item.checked}}"/>{{item.name}}
          </label>
       </radio-group>
+    </view>
+
+    <view class="cu-form-group">
+      <view class="title">有无小孩<text class="text-red">*</text></view>
+      <picker bindchange="childInfoChange" value="{{childInfoIndex}}" range="{{childInfoList}}" range-key="{{'name'}}">
+        <view class="picker">
+          {{childInfoList[childInfoIndex].name}}
+        </view>
+      </picker>
     </view>
 
     <!-- <view data-value="hobby" class="flex-row-between-center cu-item arrow">
