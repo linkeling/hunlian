@@ -1,6 +1,5 @@
 var app = getApp();
 var rts = require("../../../utils/rts.js");
-import WxValidate from "../../../utils/WxValidate";
 
 Page({
   data: {
@@ -17,8 +16,6 @@ Page({
      profession:'',
      hasAndNoList: [{id: 1, name: '有'}, {id: 2, name: '无'}],
      yesAndNoList: [{id: 1, name: '是'}, {id: 2, name: '否'}],
-     childInfoList: [{id: 1, name: '没有'}, {id: 2, name: '有，我们住一起'},{id:3,name:'有，偶尔住一起'},{id:3,name:'有，不在身边'}],
-     childInfoIndex:0,
      dateBirth:"2000-01-01",
      hobbyTags:[],
      hobbys:[],  // 页面显示标签
@@ -57,23 +54,6 @@ Page({
       nativePlace: e.detail.code[2],
     })
   },
-
-  
-  childInfoChange:function(e) {
-    var that = this;
-    var children = ''
-    for (let i = 0; i < that.data.childInfoList.length; i++) {
-      if(i === Number(e.detail.value)){
-        children = that.data.childInfoList[i].id;
-        this.setData({
-          childInfoIndex: e.detail.value,
-          children:children,
-        })
-        return;
-      }
-    }
-  },
-
 
   educationChange(e) {
     var that = this;
@@ -170,7 +150,7 @@ Page({
   },
 
   onLoad: function () {
-    this.initValidate();
+    
   },
   onReady: function () {
 
@@ -194,161 +174,12 @@ Page({
     // 页面关闭
   },
 
-  initValidate() {
-    let rules = {
-      residentName: {
-        required: true,
-        maxlength: 10
-      },
-      gender: {
-        required: true
-      },
-      dateBirth: {
-        required: true
-      },
-      livingPlaceName: {
-        required: true
-      },
-      nativePlaceName: {
-        required: true
-      },
-      height: {
-        required: true,
-        maxlength: 4
-      },
-      weight: {
-        required: true
-      },
-      education: {
-        required: true
-      },
-      profession: {
-        required: true
-      },
-      monthIncome: {
-        required: true
-      },
-      house: {
-        required: true
-      },
-      isCar: {
-        required: true
-      },
-      marriage: {
-        required: true
-      },
-      divorce: {
-        required: true
-      },
-      children: {
-        required: true
-      },
-      personal: {
-        required: true,
-        maxlength: 200
-      },
-      family: {
-        required: true,
-        maxlength: 200
-      },
-      standard: {
-        required: true,
-        maxlength: 200
-      },
-      reject: {
-        required: true,
-        maxlength: 200
-      }
-    }
-
-    let message = {
-      residentName: {
-        required: '请输入昵称',
-        maxlength: '名字不能超过10个字'
-      },
-      gender: {
-        required: '请选择性别'
-      },
-      dateBirth: {
-        required: '请选择生日'
-      },
-      livingPlaceName: {
-        required: '请选择现居地'
-      },
-      nativePlaceName: {
-        required: '请选择户籍地'
-      },
-      height: {
-        required: '请输入身高'
-      },
-      weight: {
-        required: '请输入体重'
-      },
-      education: {
-        required: '请选择学历'
-      },
-      profession: {
-        required: '请选择职业'
-      },
-      monthIncome: {
-        required: '请输入月收入'
-      },
-      house: {
-        required: '请选择有无房产'
-      },
-      isCar: {
-        required: '请选择车辆情况'
-      },
-      marriage: {
-        required: '请选择有无婚史'
-      },
-      divorce: {
-        required: '请选择是否接受离异'
-      },
-      children: {
-        required: '请选择有无小孩'
-      },
-      personal: {
-        required: '请输入个人情况介绍',
-        maxlength: '个人情况介绍不能大于200字符'
-      },
-      family: {
-        required: '请输入家庭情况',
-        maxlength: '家庭情况不能大于200字符'
-      },
-      standard: {
-        required: '请输入择偶标准',
-        maxlength: '择偶标准不能大于200字符'
-      },
-      reject: {
-        required: '请输入拒绝情况',
-        maxlength: '拒绝情况不能大于200字符'
-      }
-      
-    }
-    //实例化当前的验证规则和提示消息
-    this.WxValidate = new WxValidate(rules, message);
-  },
-
-  
-  //报错 
-  showModal(error) {
-    wx.showModal({
-    content: error.msg,
-    showCancel: false,
-   })
-  },
-
    // 提交个人信息
    submitInfo: function (e) {
-    var that = this;
-    if (!this.WxValidate.checkForm(that.data)) {
-      var error = that.WxValidate.errorList[0]
-      this.showModal(error)
-      return false
-    }
-    this.showModal({
-      msg: '提交成功'
-    })
+      var that = this;
+      console.log(that.data);
+      rts.rtPostAll(app.globalData.apiUrl+"/v1/match-admin/custom-base-info", that.data, function (res) {
+        console.log(res)
+      })
   },
 })

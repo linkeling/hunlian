@@ -1,0 +1,16 @@
+<view class="cu-form-group">
+  <view class="title">联系电话</view>
+  <view class="title">153663666669</view>
+</view>
+<view class="cu-form-group">
+  <view class="title">微信号</view>
+  <view class="title">sffg55355225</view>
+</view>
+<view class="cu-form-group">
+  <view class="title">地址</view>
+  <view class="title">环球时代（五华区科华路89号）</view>
+</view>
+<view class="cu-form-group">
+  <view class="title">微信二维码</view>
+  <view class="title"></view>
+</view>

@@ -85,7 +85,7 @@ page {
 
 .cu-form-group input {
 	flex: 1;
-	font-size: 25rpx;
+	font-size: 28rpx;
 	text-align: right;
 	color: #555;
 	padding-left: 15rpx;

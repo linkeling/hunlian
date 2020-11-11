@@ -10,7 +10,6 @@
 .flex-width-65{
   width: 65%;
 }
-
 .flex-height-100{
   height: 344rpx;
 }
